@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_str_isdigit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalves <xalves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 11:52:27 by xalves            #+#    #+#             */
-/*   Updated: 2025/06/17 17:20:15 by xalves           ###   ########.fr       */
+/*   Created: 2025/04/10 12:32:12 by xalves            #+#    #+#             */
+/*   Updated: 2025/06/17 11:48:08 by xalves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "Bonus_ButBetter/libft.h"
+int	ft_str_isdigit(char *str)
+{
+	int	i;
 
-long	ft_atoi(const char *nptr);
-int		ft_str_isdigit(char *str);
-void	ft_push(t_list **dst, t_list **src);
-void	ft_rlst(t_list **lst);
+	i = 0;
+	while (str)
+	{
+		if (str[i] >= 48 && str[i] <= 57)
+			i++;
+		else if (str[i] == '\0')
+			return (1);
+		else
+			return (0);
+	}
+	return (1);
+}
+/*
+int	main(void)
+{
+	char	*str;
 
-#endif
+	str = "12345";
+	ft_str_isdigit(str);
+	return (0);
+} */

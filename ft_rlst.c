@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_rlst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalves <xalves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 11:52:27 by xalves            #+#    #+#             */
-/*   Updated: 2025/06/17 17:20:15 by xalves           ###   ########.fr       */
+/*   Created: 2025/06/17 14:27:40 by xalves            #+#    #+#             */
+/*   Updated: 2025/06/17 17:15:41 by xalves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "Bonus_ButBetter/libft.h"
+void	ft_rlst(t_list **lst)
+{
+	t_list	*first;
+	t_list	*last;
 
-long	ft_atoi(const char *nptr);
-int		ft_str_isdigit(char *str);
-void	ft_push(t_list **dst, t_list **src);
-void	ft_rlst(t_list **lst);
-
-#endif
+	if (!lst || !*lst || !(*lst)->next)
+		return ;
+	first = *lst;
+	// move head one down
+	*lst = first->next;
+	(*lst)->prev = NULL;
+	// get last node
+	last = *lst;
+	while (last->next)
+		last = last->next;
+	// first node to the end
+	last->next = first;
+	first->prev = last;
+	first->next = NULL;
+}

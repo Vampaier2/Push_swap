@@ -6,7 +6,7 @@
 /*   By: xalves <xalves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:38:17 by xalves            #+#    #+#             */
-/*   Updated: 2025/06/13 15:14:39 by xalves           ###   ########.fr       */
+/*   Updated: 2025/06/17 11:54:55 by xalves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_list	*ft_lstnew(int content)
 	new_node ->content = content;
 	new_node ->next = NULL;
 	new_node ->prev = NULL;
+	new_node ->binary = NULL;
 	return (new_node);
 }
 /*

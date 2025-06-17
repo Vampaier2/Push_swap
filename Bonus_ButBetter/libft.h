@@ -6,7 +6,7 @@
 /*   By: xalves <xalves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 11:52:27 by xalves            #+#    #+#             */
-/*   Updated: 2025/06/13 12:29:27 by xalves           ###   ########.fr       */
+/*   Updated: 2025/06/17 15:53:29 by xalves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 	int				content;
 	struct s_list	*next;
 	struct s_list	*prev;
-	int				binary;
+	char			*binary;
 }	t_list;
 
 void	ft_bzero(void *str, size_t n);
