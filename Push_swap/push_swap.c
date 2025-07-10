@@ -6,7 +6,7 @@
 /*   By: xalves <xalves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 12:26:29 by xalves            #+#    #+#             */
-/*   Updated: 2025/07/04 14:35:43 by xalves           ###   ########.fr       */
+/*   Updated: 2025/07/10 12:53:33 by xalves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	populate_stk(int argc, char const *argv[], t_list **a_stk, int **aux_a)
 void	prepping_for_radix(t_list **a_stack, int *aux_arr, int argc, int blen)
 {
 	ft_sort_int_tab(aux_arr, argc - 1);
-    convert_to_index_and_binary(*a_stack, aux_arr, blen);
+	convert_to_index_and_binary(*a_stack, aux_arr, blen);
 }
 
 /// @brief  sorts stack A thru Binary Radix method
@@ -103,14 +103,14 @@ int	main(int argc, char const *argv[])
 	if (populate_stk(argc, argv, &a_stack, &aux_array))
 		return (1);
 	if (is_stack_sorted(a_stack))
-		return (0);
+		return (free_all(a_stack, b_stack, aux_array), 1);
 	size = ft_lstsize(a_stack);
 	if (size <= 5)
 		small_sort(&a_stack, &b_stack, size);
 	else
 	{
 		bigg_bit_len = get_bit_length(size - 1);
-        prepping_for_radix(&a_stack, aux_array, argc, bigg_bit_len);
+		prepping_for_radix(&a_stack, aux_array, argc, bigg_bit_len);
 		radix_sort(&a_stack, &b_stack, bigg_bit_len);
 	}
 	return (free_all(a_stack, b_stack, aux_array), 0);

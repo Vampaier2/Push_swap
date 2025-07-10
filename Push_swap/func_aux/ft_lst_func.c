@@ -6,7 +6,7 @@
 /*   By: xalves <xalves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:38:17 by xalves            #+#    #+#             */
-/*   Updated: 2025/07/04 13:55:59 by xalves           ###   ########.fr       */
+/*   Updated: 2025/07/04 15:02:30 by xalves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new_node)
 		last = last->next;
 	last->next = new_node;
 	new_node->prev = last;
-}
-
-/// @brief  add new node to the front of the list
-/// @param lst list to add new node to
-/// @param new_node new node to the list
-void	ft_lstadd_front(t_list **lst, t_list *new_node)
-{
-	if (!lst || !new_node)
-		return ;
-	new_node->next = *lst;
-	new_node->prev = NULL;
-	if (*lst)
-		(*lst)->prev = new_node;
-	*lst = new_node;
 }
 
 /// @brief gets the size of the list

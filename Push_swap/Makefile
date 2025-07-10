@@ -1,8 +1,7 @@
 # Makefile for Bonus_ButBetter
 NAME      = push_swap.a
 
-AUX_FILES = func_aux/ft_calloc.c \
-            func_aux/ft_conversions.c \
+AUX_FILES = func_aux/ft_conversions.c \
             func_aux/ft_lst_func.c \
             func_aux/is_stack_sorted.c \
 
